@@ -14,24 +14,24 @@ while i < ileliczb:
         liczby.append(liczba)
         i+=1
 
-#pobieramy typy od użytkownika
-print("Wytypuj %d z %d liczb: " % (ileliczb,maksliczba)) #to samo z innym zapisem, %s string, %d dziesiętna, %f float
-typy=set()
-i=0
-while i < ileliczb:
-    typ = int(input("podaj liczbę %s: " % (i+1)))
-    if typ not in typy:
-        typy.add(typ)
-        i+=1
+for n in range(3):
+    #pobieramy typy od użytkownika
+    print("Próba %s z 3" % (n+1))
+    print("Wytypuj %d z %d liczb: " % (ileliczb,maksliczba)) #to samo z innym zapisem, %s string, %d dziesiętna, %f float
+    typy=set()
+    i=0
+    while i < ileliczb:
+       typ = int(input("podaj liczbę %s: " % (i+1)))
+       if typ not in typy:
+          typy.add(typ)
+          i+=1
 
-
-print("\nWylosowane liczby: ", liczby)
-
-
-#prezentacja wyników
-trafione = set(liczby) & typy
-if trafione:
-    print("Ilość trafień: %s z %s" % ((len(trafione)),ileliczb))
-    print("Trafione liczby: ", trafione)
-else:
-    print("Brak trafień. Spróbuj jeszcze raz!")
+    #prezentacja wyników
+    trafione = set(liczby) & typy
+    if trafione:
+        print("Ilość trafień: %s z %s" % ((len(trafione)),ileliczb))
+        print("Trafione liczby: ", trafione)
+    else:
+        print("Brak trafień. Spróbuj jeszcze raz!")
+    n+=1
+    print("\n########################################\n")
