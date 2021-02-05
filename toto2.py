@@ -31,12 +31,24 @@ for n in range(3):
     typy=set()
     i=0
     while i < ileliczb:
-       typ = int(input("podaj liczbę %s: " % (i+1)))
-       if typ not in typy:
+        try:
+            typ = int(input("podaj liczbę %s: " % (i+1)))
+        except ValueError:
+            print("Błędne dane:")
+            continue
+
+        if typ not in typy and 0<typ<=maksliczba:
           typy.add(typ)
           i+=1
+        
+        elif typ in typy:
+            print("Zdublowana liczba")
 
-    #prezentacja wyników4
+        else:
+            print("Liczba poza zakresem")
+
+    
+    #prezentacja wyników
     trafione = set(liczby) & typy
     if trafione:
         print("Ilość trafień: %s z %s" % ((len(trafione)),ileliczb))
