@@ -1,9 +1,19 @@
 import random
 
-ileliczb = int(input("Ile liczb chcesz odgadnąć?"))
-#print (ileliczb)
-maksliczba = int(input("Jaka jest maksymalna losowana liczba?"))
-#print (maksliczba)
+
+
+try:
+    ileliczb = int(input("Ile liczb chcesz odgadnąć?"))
+    #print (ileliczb)
+    maksliczba = int(input("Jaka jest maksymalna losowana liczba?"))
+    #print (maksliczba)
+    if ileliczb > maksliczba:
+        print("Błędne dane!")
+        exit()
+except ValueError:
+    print("Błądne dane!")
+    exit()
+
 
 #losujemy liczby
 liczby=[]
@@ -26,7 +36,7 @@ for n in range(3):
           typy.add(typ)
           i+=1
 
-    #prezentacja wyników
+    #prezentacja wyników4
     trafione = set(liczby) & typy
     if trafione:
         print("Ilość trafień: %s z %s" % ((len(trafione)),ileliczb))
@@ -34,4 +44,4 @@ for n in range(3):
     else:
         print("Brak trafień. Spróbuj jeszcze raz!")
     n+=1
-    print("\n########################################\n")
+    print("\n", "########################################" * 10, "\n")
