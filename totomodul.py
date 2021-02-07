@@ -48,3 +48,18 @@ def pobierztypy(ile, maks):
             typy.add(typ)
             i = i + 1
     return typy
+
+def wyniki(liczby, typy):
+    """Funkcja porównuje wylosowane i wytypowane liczby,
+    zwraca ilość trafień"""
+    if trafione:
+        print("\nIlość trafień: %s" % len(trafione))
+        trafione = ", ".join(map(str, trafione))
+        print("Trafione liczby: %s" % trafione)
+    else:
+        print("Brak trafień. Spróbuj jeszcze raz!")
+
+        print("\n" + "x" * 40 + "\n")  # wydrukuj 40 znaków x
+
+
+    return len(trafione)
